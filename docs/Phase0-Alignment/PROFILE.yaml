@@ -1,0 +1,51 @@
+# User Profile & Collaboration Style
+# Phase: 0 - Alignment
+# Updated: 2025-10-21
+
+user:
+  name: "Aitor"
+  role: "Developer"
+  experience_level: "Intermediate Python developer"
+  
+technical_context:
+  primary_editor: "Cursor"
+  target_platform: "Codex CLI"
+  operating_system: "Windows 10"
+  languages: 
+    - "Python"
+  frameworks: []
+  tools: 
+    - "Python for data processing"
+    - "Excel automation libraries"
+  excel_experience: "Some automation experience, prefers Python for data processing"
+
+collaboration_preferences:
+  communication_style: "Action-oriented, make decisions and explain after"
+  code_review_preference: "Highlight key decisions only"
+  documentation_preference: "Concise, focused on essentials"
+  feedback_frequency: "At major phase milestones"
+
+prompting_expertise:
+  level: "Advanced - comfortable with structured AI-assisted development"
+  preferred_detail: "High-level overview with key decision rationale"
+  context_needs: "Minimal - trusts AI to make good choices"
+
+project_focus:
+  domain: "Excel Automation with AI"
+  primary_goals: 
+    - "Build Codex CLI tool for Excel automation"
+    - "Process recruitment data with Python"
+    - "Integrate ChatGPT for intelligent processing"
+  constraints:
+    - "Must work via CLI (Codex)"
+    - "Python-based data processing"
+    - "Excel output formatting"
+  success_metrics: []
+
+ai_preferences:
+  response_format: "Action first, explanation after"
+  explanation_depth: "Key decisions and rationale"
+  code_style: "Pythonic, clean, maintainable"
+  testing_approach: "Pragmatic - test critical paths"
+
+

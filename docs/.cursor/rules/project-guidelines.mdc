@@ -1,0 +1,119 @@
+# Excel In ChatGPT - Project Guidelines
+
+## Overview
+
+This project follows the **Promptgramming / Translation Hill** methodology for AI-assisted development.
+
+## Core Principles
+
+### 1. Phase-Based Development
+- Always check current phase before making changes
+- Update frontmatter `updated` field when editing documents
+- Maintain links between phase artifacts
+
+### 2. Context Preservation
+- All documents include frontmatter with metadata
+- Cross-reference related artifacts using links
+- Keep PROFILE.yaml and CONTEXT.md up to date
+
+### 3. Iterative Progress
+- Make small, targeted edits
+- Validate changes against acceptance criteria
+- Document decisions in appropriate phase files
+
+## File Organization
+
+### Documentation Structure
+```
+docs/
+├── Phase0-Alignment/    # User profile & context
+├── Phase1-Ideation/     # Goals & requirements
+├── Phase2-POC/          # Research & architecture
+├── Phase3-MVP/          # Implementation & delivery
+└── .cursor/rules/       # This file
+```
+
+### Code Structure
+```
+Code/
+├── Backend/            # Server-side implementation
+└── Frontend/           # Client-side implementation
+```
+
+### Resources
+```
+Data/                   # Excel files and test data
+Resources/
+├── Documentation/      # PDFs and guides
+└── Images/            # Charts and visuals
+```
+
+## Development Workflow
+
+### Starting Work
+1. Check current phase in project README
+2. Read relevant phase README for context
+3. Review linked artifacts in frontmatter
+4. Make targeted changes
+
+### Completing Work
+1. Update `updated` field in frontmatter
+2. Check off completed checklist items
+3. Document decisions if needed
+4. Update main README if phase changes
+
+## AI Agent Coordination
+
+When working on Phase 3 (MVP):
+- Reference `docs/Phase3-MVP/agents.md` for role definitions
+- Follow agent-specific prompt starters
+- Complete handoff checklists when passing work
+
+## Quality Standards
+
+### Code
+- Follow existing patterns in codebase
+- Write tests for new features
+- Document public APIs
+
+### Documentation
+- Keep phase documents in sync
+- Update frontmatter timestamps
+- Maintain cross-reference links
+
+### Commits
+- Use conventional commit messages
+- Reference phase/artifact in commits
+- Keep changes focused and atomic
+
+## Technology Stack
+
+**Language**: Python (for Excel automation)  
+**Excel Library**: TBD (openpyxl, pandas, xlwings)  
+**AI Integration**: ChatGPT API  
+**Testing**: TBD  
+
+## Project-Specific Notes
+
+### Excel Automation Focus
+- Test files are in `Data/` directory
+- Reference existing PDFs in `Resources/Documentation/`
+- Focus on recruitment data processing
+
+### Key Questions to Answer
+1. What specific Excel workflows need automation?
+2. How will ChatGPT enhance the automation?
+3. What are the input/output formats?
+4. What validation is required?
+
+## Next Actions
+
+- [ ] Complete Phase 0 alignment
+- [ ] Review existing documentation
+- [ ] Define specific automation requirements
+- [ ] Move to Phase 1 ideation
+
+---
+
+**Last Updated**: 2025-10-21  
+**Status**: Project setup complete, ready for Phase 0
