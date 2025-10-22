@@ -58,6 +58,10 @@ desktop.ini
 # Project specific
 *.zip.backup
 
+# Test data (may contain sensitive information)
+Data/
+Resources/Images/
+
 # Cloned repositories (for reference only, don't commit)
 Code/anthropic-skills/
 
