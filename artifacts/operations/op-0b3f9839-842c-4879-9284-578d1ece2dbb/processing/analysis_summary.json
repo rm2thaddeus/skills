@@ -1,0 +1,121 @@
+{
+  "operation_id": "op-0b3f9839-842c-4879-9284-578d1ece2dbb",
+  "sheets": [
+    "Instructions",
+    "Donn\u00e9es m\u00e9decins",
+    "Donn\u00e9es visites",
+    "Dashboard"
+  ],
+  "instructions_rows": 22,
+  "medecins": {
+    "rows": 197,
+    "missing_counts": {
+      "Identifiant": 0,
+      "Civilite": 0,
+      "Nom": 0,
+      "Prenom": 0,
+      "Specialite_1": 53,
+      "Specialite_2": 116,
+      "Etablissement": 0,
+      "ARS": 0,
+      "Secteur": 0,
+      "Region": 0,
+      "Nbr_patients_potentiels_pour_Produimax": 1,
+      "Attitude_envers_Produimax": 0
+    },
+    "attitude_distribution": {
+      "Neutre": 74,
+      "Prescripteur": 62,
+      "Detracteur": 60,
+      "Non_renseigne": 1
+    },
+    "region_distribution": {
+      "Nord": 99,
+      "Sud": 96,
+      "DOM_TOM": 1,
+      "Non_renseigne": 1
+    },
+    "specialite1_top": {
+      "Non_renseigne": 54,
+      "Radiologie": 34,
+      "Hematologie": 32,
+      "Urologie": 30,
+      "Oncologie": 27,
+      "Proctologie": 20
+    },
+    "potential_patients": {
+      "total": 1870.0,
+      "mean": 9.540816326530612,
+      "median": 10.0,
+      "max": 20.0
+    }
+  },
+  "visites": {
+    "rows_total": 624,
+    "rows_2020": 611,
+    "rows_outside_scope": 13,
+    "date_range": {
+      "min": "2019-03-07",
+      "max": "2021-12-23"
+    },
+    "mode_distribution": {
+      "Face_a_face": 306,
+      "Interaction_a_distance": 305
+    },
+    "delegue_top5": {
+      "Agatha_CHRISTIE": 114,
+      "Coco_CHANEL": 106,
+      "Charlotte_CORDAY": 103,
+      "Catelyn_STARK": 99,
+      "Michel_STROGOFF": 97
+    },
+    "macro_region_distribution": {
+      "Nord": 323,
+      "Sud": 286,
+      "Hors_cible": 2
+    },
+    "secteur_distribution": {
+      "S4": 114,
+      "S6": 106,
+      "S5": 103,
+      "S3": 99,
+      "S2": 97,
+      "S1": 90,
+      "S9": 2
+    },
+    "duration_mean_min": 37.38952536824877,
+    "duration_median_min": 30.0,
+    "doctors_covered": 154,
+    "visits_per_doctor_distribution": {
+      "count": 154.0,
+      "mean": 3.9675324675324677,
+      "std": 3.7248833489105744,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 5.0,
+      "max": 26.0
+    },
+    "attitude_distribution": {
+      "Neutre": 232,
+      "Prescripteur": 194,
+      "Detracteur": 185
+    }
+  },
+  "coverage": {
+    "doctors_with_visits_2020": 154,
+    "potential_patients_reached": 1419.0,
+    "attitude_counts_in_visited": {
+      "Neutre": 63,
+      "Detracteur": 50,
+      "Prescripteur": 41
+    },
+    "specialite1_top": {
+      "Non_renseigne": 40,
+      "Radiologie": 29,
+      "Hematologie": 26,
+      "Urologie": 21,
+      "Oncologie": 21
+    }
+  }
+}

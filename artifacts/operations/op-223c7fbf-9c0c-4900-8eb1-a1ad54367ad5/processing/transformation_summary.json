@@ -1,0 +1,25 @@
+{
+  "operation_id": "op-223c7fbf-9c0c-4900-8eb1-a1ad54367ad5",
+  "totals": {
+    "medecins": 198,
+    "visites_total": 624,
+    "visites_2020_cible": 609
+  },
+  "modes_2020": {
+    "Face_a_face": 305,
+    "Interaction_a_distance": 304
+  },
+  "macro_regions": {
+    "Nord": 323,
+    "Sud": 286
+  },
+  "coverage": {
+    "doctors_visited_once": 153,
+    "total_doctors": 198
+  },
+  "onco_focus": {
+    "doctors_onco_hemato": 40,
+    "patients_potentiels_total": 334.0
+  },
+  "timestamp_utc": "2025-10-26T12:30:05.874452+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "operation_id": "6d790c45-4ed4-463a-b220-76defe949901",
+  "timestamp": "2025-10-26T11:17:59.144094Z",
+  "agent": "excel-processing",
+  "input_file": "Data/Test_Excel_Recrutement_v3.0.xlsx",
+  "parameters": {
+    "analysis_type": "compliance_check"
+  },
+  "status": "initialized",
+  "changes": [],
+  "validation": {},
+  "approval_status": "pending",
+  "approved_by": null,
+  "approved_at": null,
+  "artifacts": {
+    "input": [
+      "artifacts\\operations\\6d790c45-4ed4-463a-b220-76defe949901\\input\\Test_Excel_Recrutement_v3.0.xlsx"
+    ],
+    "processing": [],
+    "output": []
+  }
+}

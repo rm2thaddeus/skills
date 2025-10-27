@@ -1,0 +1,26 @@
+{
+  "operation_id": "op-0b3f9839-842c-4879-9284-578d1ece2dbb",
+  "timestamp": "2025-10-26T11:44:44.124223+00:00",
+  "agent": "excel-processing",
+  "input_file": "Data\\Test_Excel_Recrutement_v3.0.xlsx",
+  "output_files": [
+    "output\\analysis_report.md"
+  ],
+  "processing_artifacts": [
+    "processing\\analysis_summary.json",
+    "processing\\validation_report.json",
+    "processing/visits_by_secteur_2020.csv",
+    "processing/visits_by_mode_2020.csv",
+    "processing/visits_by_attitude_2020.csv"
+  ],
+  "validation": {
+    "formula_errors": 0,
+    "total_formulas": 9,
+    "status": "success"
+  },
+  "changes": [],
+  "approval_status": "pending",
+  "approved_by": null,
+  "approved_at": null,
+  "notes": "Analysis only; workbook left unchanged."
+}

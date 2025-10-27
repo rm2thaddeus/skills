@@ -14,97 +14,95 @@ links:
 
 ## Refined Idea
 
-Create a repository of reusable Claude **skills** for Codex CLI. Skills are pre-built capabilities that Claude can execute to solve specific problem domains (bureaucratic tasks, document handling, data analysis). The repository will include skill templates, example skills (bureaucratic processing, document handling), and test data (Excel files) to validate Codex can properly read and execute these skills.
+Create an **office automation system** that leverages Anthropic's document-skills (especially xlsx) and skill-creator capabilities to solve real-world office tasks. The system will use Claude as an agentic assistant that can process documents, perform data analysis, and generate reports while maintaining human oversight through a structured workflow with audit trails and artifacts.
 
 ## Objectives
 
 ### Primary Goal
 
-Build a production-ready skills repository that Codex CLI can read and execute, enabling Claude to solve bureaucratic tasks, document handling, and data analysis problems.
+Build a production-ready office automation system that can process Excel documents, perform data analysis, and generate reports using Claude's document-skills capabilities, with comprehensive human oversight and audit trails.
 
 ### Secondary Goals
 
-1. Create Claude skills for bureaucratic processing
-2. Create Claude skills for document handling
-3. Provide a skill template for users to create new skills
-4. Validate skills work with test data (Excel files for gauging outputs)
-5. Document skill creation patterns and best practices 
+1. Integrate Anthropic's document-skills (xlsx, docx, pdf, pptx) for comprehensive document processing
+2. Leverage skill-creator patterns to extend capabilities for specific office workflows
+3. Implement human-in-the-loop approval system with clear audit trails
+4. Create artifact tracking system for all document transformations and analyses
+5. Build standardized workflow patterns for common office automation tasks 
 
 ## Success Metrics
 
-- **Functionality**: Successfully analyzes recruitment Excel files via Codex CLI commands
-- **Reusability**: Code patterns can be applied to different Excel datasets
-- **Code Quality**: Claude generates clean, maintainable Python code
-- **Developer Experience**: Clear documentation enables easy extension to new use cases 
+- **Functionality**: Successfully processes Excel documents using Anthropic's xlsx skill with zero formula errors
+- **Human Oversight**: All document transformations require human approval with clear audit trails
+- **Artifact Tracking**: Complete history of all document changes, analyses, and decisions
+- **Workflow Efficiency**: Standardized patterns reduce time for common office automation tasks
+- **Extensibility**: System can be extended to new document types and workflows using skill-creator patterns 
 
 ## Scope
 
 ### In Scope
 
-- Claude skills for bureaucratic tasks
-- Claude skills for document handling  
-- Skill template for creating new skills
-- Test data (Excel files) to validate skill outputs
-- Skill definition format/structure
-- Documentation on creating and using skills
-- Codex CLI integration patterns
+- Integration with Anthropic's document-skills (xlsx, docx, pdf, pptx)
+- Human-in-the-loop approval workflows with audit trails
+- Artifact tracking and version control for all document operations
+- Office automation patterns for common tasks (data analysis, report generation, format conversion)
+- Skill extension capabilities using skill-creator patterns
+- Test data validation using existing Excel files in Data/ directory
 
 ### Out of Scope
 
-- Web interface or GUI
-- Real-time data processing
-- Database integration (initial version)
-- Advanced ML/AI models (beyond Claude's code generation)
-- Multi-user collaboration features
-- Cloud deployment (local CLI tool) 
+- Web interface or GUI (focus on CLI/API integration)
+- Real-time data processing (batch processing only)
+- Database integration (file-based operations)
+- Advanced ML/AI models beyond Claude's capabilities
+- Multi-user collaboration features (single-user focus)
+- Cloud deployment (local system operation) 
 
 ## Key Assumptions
 
-1. **Claude's Capabilities**: Claude can generate quality Python data analysis code when given proper context
-2. **Codex CLI Integration**: Codex CLI can effectively execute Claude-generated code
-3. **Use Case Validity**: Recruitment data analysis patterns will generalize to other domains
-4. **Python Sufficiency**: Python ecosystem (pandas, openpyxl, etc.) provides necessary functionality
-5. **User Expertise**: Users have basic Python/CLI knowledge or can follow documentation 
+1. **Anthropic Skills Integration**: Document-skills from anthropic-skills repository provide robust Excel/document processing capabilities
+2. **Human Oversight Requirement**: All document transformations require human approval for accuracy and compliance
+3. **Audit Trail Necessity**: Complete tracking of all operations is essential for office automation trust
+4. **Skill Extensibility**: skill-creator patterns enable customization for specific office workflows
+5. **File-Based Operations**: Local file processing meets office automation needs without database complexity 
 
 ## Risks & Mitigations
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|------------|
-| Claude generates buggy code | High | Medium | Add validation layers, unit tests, error handling patterns |
-| Codex CLI limitations | High | Low | Test early, document workarounds, fallback to direct Python |
-| Excel format complexity | Medium | Medium | Use robust libraries (openpyxl/pandas), handle edge cases |
-| Patterns don't generalize | Medium | Low | Start with clear abstractions, test with varied datasets |
-| Poor documentation | Medium | Medium | Follow promptgramming template, create examples for each pattern |
+| Document-skills integration issues | High | Medium | Test integration early, maintain fallback to manual processing |
+| Human approval bottlenecks | Medium | High | Design efficient approval workflows, batch operations where possible |
+| Audit trail complexity | Medium | Medium | Use standardized logging patterns, automated artifact generation |
+| Skill customization complexity | Medium | Low | Follow skill-creator patterns, provide clear templates |
+| File corruption during processing | High | Low | Implement backup systems, version control, validation checks |
 
 ## Dependencies
 
 - **Technical**: 
-  - Python 3.8+
-  - pandas (data manipulation)
-  - openpyxl (Excel reading/writing)
-  - Codex CLI environment
-  - Claude API access (via Codex)
+  - Anthropic's document-skills repository integration
+  - Python 3.8+ with pandas, openpyxl, LibreOffice for formula recalculation
+  - Claude API access for document processing
+  - Git for version control and audit trails
   
 - **Resources**: 
-  - Existing test data (recruitment Excel files)
-  - Documentation PDFs for domain understanding
-  - Time for testing and iteration
+  - Existing test data (Excel files in Data/ directory)
+  - Anthropic skills documentation and examples
+  - Time for integration testing and workflow design
   
 - **Knowledge**: 
-  - Python data analysis patterns
-  - Excel file formats and best practices
-  - Codex CLI usage patterns
-  - Claude's code generation capabilities 
+  - Anthropic skills architecture and usage patterns
+  - Office automation workflow design
+  - Human-in-the-loop system design principles
+  - Audit trail and artifact management best practices 
 
 ## Next Steps
 
 1. ✅ Phase 1 complete - objectives and scope defined
-2. ⏳ Move to Phase 2 (POC) for feasibility research
-3. ⏳ Technical spikes:
-   - Test Codex CLI + Claude integration
-   - Validate pandas/openpyxl for recruitment data
-   - Prototype command structure
-4. ⏳ Design repository architecture (modules, CLI interface, patterns)
-5. ⏳ Review PDFs to understand domain requirements
+2. ⏳ Create comprehensive agents.md file referencing document-skills and skill-creator
+3. ⏳ Set up integration between anthropic-skills and local project structure
+4. ⏳ Design human-in-the-loop workflow system with audit trails
+5. ⏳ Implement artifact tracking and version control system
+6. ⏳ Test with existing Excel files in Data/ directory
+7. ⏳ Create standardized workflow patterns for common office automation tasks
 
 

@@ -1,0 +1,11 @@
+{
+  "input_file": "Data\\Test_Excel_Recrutement_v3.0.xlsx",
+  "worksheet_names": [
+    "Instructions",
+    "Donn\u00e9es m\u00e9decins",
+    "Donn\u00e9es visites",
+    "Dashboard"
+  ],
+  "file_size_bytes": 60851,
+  "last_modified_utc": "2025-10-18T13:51:49.997732+00:00"
+}

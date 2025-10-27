@@ -1,0 +1,28 @@
+{
+  "operation_id": "op-223c7fbf-9c0c-4900-8eb1-a1ad54367ad5",
+  "timestamp": "2025-10-26T12:09:44.806694+00:00",
+  "agent": "excel-processing",
+  "input_file": "Data\\Test_Excel_Recrutement_v3.0.xlsx",
+  "output_files": [
+    "output\\Test_Excel_Recrutement_v3.0_processed.xlsx"
+  ],
+  "processing_artifacts": [
+    "processing/transformation_summary.json",
+    "processing/validation_report.json"
+  ],
+  "validation": {
+    "formula_errors": 0,
+    "total_formulas": 5288,
+    "status": "success"
+  },
+  "changes": [
+    "Converted base lists to structured tables tblMedecins and tblVisites",
+    "Added helper calculation columns in tblVisites and tblMedecins",
+    "Populated dashboard KPI blocks with dynamic formulas for 2020 focus",
+    "Inserted monthly visits and mode distribution charts"
+  ],
+  "approval_status": "pending",
+  "approved_by": null,
+  "approved_at": null,
+  "notes": "Workbook saved as processed copy; original left unchanged."
+}
