@@ -1,0 +1,31 @@
+# **Surrealistic Cartoon Scene - {{Scene_Title}}**
+
+## **Theme & Atmosphere**
+- A **surreal, dreamlike** environment with **{{Setting_Elements}}**.
+- Swirling clouds morph into **{{Dynamic_Elements}}**.
+- Floating **{{Geometric_Shapes}}** and abstract doodles express **{{Emotions_Expressed}}**.
+- A blend of **{{Organic_Forms}}** and **{{Futuristic_Structures}}** creates a whimsical yet thought-provoking scene.
+
+## **Color & Lighting**
+- A **{{Color_Palette}}** transitioning smoothly between warm and cool hues.
+- **{{Light_Sources}}** add depth and mystery to the composition.
+
+## **Composition & Characters**
+- **Playful, fluid characters** or abstract creatures interact with **{{Interactive_Objects}}**.
+- The environment is **dynamic and immersive**, enhancing the sense of movement.
+- **No text** in the image—purely visual storytelling.
+
+## **Main Character**
+- **Name**: {{Character_Name}}  
+- **Age**: {{Character_Age}}  
+- **Appearance**: A **bald scientist from Latin America** with **{{Character_Features}}**.
+- **Activity**: **{{Character_Activity}}**.
+- **Expression & Emotion**: **{{Character_Emotion}}**.
+- **Clothing & Accessories**: **{{Character_Outfit}}**.
+
+## **Story Progression**
+- **Time Period**: **{{Time_Period}}**
+- **Character’s Growth Stage**: **{{Growth_Stage}}**
+- **Key Moment**: **{{Story_Event}}**
+- **Mood & Energy**: **{{Mood_And_Energy}}**
+

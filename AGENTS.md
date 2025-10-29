@@ -7,7 +7,7 @@ This system provides Claude agents for office automation tasks using Anthropic's
 ## Available Agents
 
 ### 1. Excel Processing Agent
-**Location**: `Code/anthropic-skills/document-skills/xlsx/`  
+**Location**: `skills/document_handling/`  
 **When to use**: Excel file creation, editing, analysis, and formula management
 
 ```bash
@@ -37,7 +37,7 @@ claude "create financial model from Data/sales_data.xlsx with growth projections
 ---
 
 ### 2. Document Processing Agent
-**Location**: `Code/anthropic-skills/document-skills/`  
+**Location**: `skills/document_handling/`  
 **When to use**: Multi-format document processing (docx, pdf, pptx)
 
 ```bash
@@ -58,7 +58,7 @@ claude "extract form data from Data/application.pdf"
 ---
 
 ### 3. Skill Creator Agent
-**Location**: `Code/anthropic-skills/skill-creator/`  
+**Location**: `skills/template/`  
 **When to use**: Extending capabilities for specific office workflows
 
 ```bash
