@@ -1,0 +1,61 @@
+---
+title: Agent Usage Rules (Phase2-POC)
+status: active
+last_updated: 2025-10-30
+---
+
+## Scope
+Guidelines for using office automation agents during Phase2-POC with skeleton skills. These rules override generic behavior and must be enforced before any operation.
+
+## Preflight Checks (MANDATORY)
+- Verify configured paths from `config.yaml` exist:
+  - `skills/document_handling`
+  - `skills/template`
+- If optional external scripts (e.g., `recalc.py`) are missing, skip dependent steps and set `validation_skipped: recalc_unavailable`.
+- If any required component is missing, do NOT execute; return:
+  - `status: pending_implementation`
+  - `message: "Required component(s) missing; operation not executed."`
+
+## Execution Mode (POC Skeleton)
+- Default: `execution_mode: poc_skeleton`, `non_destructive_writes: true` (see `config.yaml`).
+- Only read/analyze operations are allowed by default.
+- Any file write requires explicit human approval and must write to `artifacts/operations/{operation_id}/output/`.
+
+## Skill Mapping (Phase2 Reality)
+- Do NOT assume `Code/anthropic-skills` exists.
+- Use local skills only:
+  - Excel/Docs: `skills/document_handling`
+  - Skill creation: `skills/template`
+
+## Output Contract
+Every agent response MUST include:
+```json
+{
+  "status": "success | error | pending_implementation | pending_approval",
+  "artifacts": [],
+  "audit_trail": {},
+  "approval_required": false,
+  "message": "human-readable summary",
+  "validation": {
+    "validation_skipped": "recalc_unavailable | none"
+  }
+}
+```
+
+## Approval & Artifacts
+- Approval checkpoints: analysis → transform → validation → final review.
+- All outputs go under `artifacts/operations/{operation_id}/...` with a complete `audit.json`.
+
+## Error Taxonomy
+- `missing_component`: required path/script not found
+- `invalid_input`: bad/missing arguments
+- `not_implemented`: skeleton without implementation
+- `validation_failed`: zero-formula-errors check failed
+
+## Prohibited Actions
+- No writes outside `artifacts/`.
+- No destructive overwrites of input files.
+- No network/file access to non-configured locations.
+
+## MCP Usage
+- Prefer local skills; if external integration is needed, first verify availability via preflight.

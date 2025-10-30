@@ -3,15 +3,21 @@
 ## Anthropic Skills Integration
 
 ### Document Skills Paths
-xlsx_skill_path: "Code/anthropic-skills/document-skills/xlsx"
-docx_skill_path: "Code/anthropic-skills/document-skills/docx"
-pdf_skill_path: "Code/anthropic-skills/document-skills/pdf"
-pptx_skill_path: "Code/anthropic-skills/document-skills/pptx"
+xlsx_skill_path: "skills/document_handling"
+docx_skill_path: "skills/document_handling"
+pdf_skill_path: "skills/document_handling"
+pptx_skill_path: "skills/document_handling"
 
 ### Skill Creator Path
-skill_creator_path: "Code/anthropic-skills/skill-creator"
+skill_creator_path: "skills/template"
 
 ## Workflow Configuration
+
+### Preflight
+preflight:
+  enforce_path_checks: true
+  fail_on_missing_skills: false
+  return_status_on_missing: "pending_implementation"
 
 ### Human-in-the-Loop Settings
 require_approval_for:
@@ -74,8 +80,8 @@ excel_agent:
     - data_analysis
     - template_preservation
     - error_validation
-  validation_script: "recalc.py"
-  libreoffice_required: true
+  validation_script: null
+  libreoffice_required: false
 
 ### Document Processing Agent
 document_agent:
@@ -146,6 +152,10 @@ debug_mode: false
 verbose_logging: false
 save_intermediate_files: true
 test_mode: false
+
+### Execution Mode
+execution_mode: "poc_skeleton"
+non_destructive_writes: true
 
 ### Testing Configuration
 testing:

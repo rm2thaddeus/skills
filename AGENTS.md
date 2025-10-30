@@ -4,6 +4,14 @@
 
 This system provides Claude agents for office automation tasks using Anthropic's document-skills and skill-creator capabilities. The agents process documents, perform data analysis, and generate reports while maintaining human oversight through structured workflows with audit trails.
 
+### Preflight & Execution Mode
+- Agents MUST run preflight checks before any operation:
+  - Verify configured skill paths exist (`skills/document_handling`, `skills/template`).
+  - Verify optional external scripts (e.g., `recalc.py`) are available; otherwise, skip dependent steps.
+  - If required components are missing, return status: `pending_implementation` and do not attempt execution.
+- Execution mode defaults to POC skeleton per `config.yaml` (`execution_mode: poc_skeleton`, `non_destructive_writes: true`).
+- All write operations require approval; destructive writes are disabled in POC skeleton mode.
+
 ## Available Agents
 
 ### 1. Excel Processing Agent
@@ -30,8 +38,8 @@ claude "create financial model from Data/sales_data.xlsx with growth projections
 1. Load Excel file using pandas or openpyxl
 2. Analyze data structure and requirements
 3. Apply transformations while preserving formulas
-4. Use `recalc.py` script for formula recalculation
-5. Validate zero errors before completion
+4. If available, use `recalc.py` for formula recalculation; otherwise return `validation_skipped: recalc_unavailable`
+5. Validate zero errors when recalculation is available; otherwise return `pending_implementation`
 6. Generate audit trail with all changes
 
 ---
