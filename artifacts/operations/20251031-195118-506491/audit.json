@@ -1,0 +1,22 @@
+{
+  "operation_id": "20251031-195118-506491",
+  "timestamp": "2025-10-31T19:51:23.008925Z",
+  "agent": "excel-processing",
+  "input_file": "Data Tests\\Dashboarding Tests\\Aitor- Patino.xlsx",
+  "output_dir": "artifacts\\operations\\20251031-195118-506491\\output",
+  "processing_artifacts": [
+    "artifacts\\operations\\20251031-195118-506491\\processing\\instructions.md",
+    "artifacts\\operations\\20251031-195118-506491\\processing\\column_map_visites.json",
+    "artifacts\\operations\\20251031-195118-506491\\processing\\proposed_formulas.json"
+  ],
+  "changes": [
+    "Data cleaned (headers normalized, dates parsed, durations extracted)",
+    "KPIs computed and saved",
+    "Formulas proposed for Dashboard sheet (pending approval)"
+  ],
+  "validation": {
+    "status": "success",
+    "notes": "Read-only processing; no workbook modifications yet"
+  },
+  "approval_status": "pending"
+}

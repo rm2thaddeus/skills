@@ -1,0 +1,72 @@
+{
+  "cells": [
+    {
+      "label_cell": "B21",
+      "target_cell": "C21",
+      "label_text": "couverture des médecins : nombre de médecins visités au moins une fois divisé par le total de médecins",
+      "formula": "=COUNTA('Données visites'!$B$4:$B$1048576)"
+    },
+    {
+      "label_cell": "B21",
+      "target_cell": "C21",
+      "label_text": "couverture des médecins : nombre de médecins visités au moins une fois divisé par le total de médecins",
+      "formula": "=COUNTA(UNIQUE('Données visites'!$B$4:$B$1048576))"
+    },
+    {
+      "label_cell": "J51",
+      "target_cell": "K51",
+      "label_text": "Interaction à distance",
+      "formula": "=COUNTIF('Données visites'!$G$4:$G$1048576,J51)"
+    },
+    {
+      "label_cell": "F70",
+      "target_cell": "G70",
+      "label_text": "S1",
+      "formula": "=COUNTIF('Données visites'!$E$4:$E$1048576,F70)"
+    },
+    {
+      "label_cell": "G70",
+      "target_cell": "H70",
+      "label_text": "S2",
+      "formula": "=COUNTIF('Données visites'!$E$4:$E$1048576,G70)"
+    },
+    {
+      "label_cell": "H70",
+      "target_cell": "I70",
+      "label_text": "S3",
+      "formula": "=COUNTIF('Données visites'!$E$4:$E$1048576,H70)"
+    },
+    {
+      "label_cell": "I70",
+      "target_cell": "J70",
+      "label_text": "S4",
+      "formula": "=COUNTIF('Données visites'!$E$4:$E$1048576,I70)"
+    },
+    {
+      "label_cell": "J70",
+      "target_cell": "K70",
+      "label_text": "S5",
+      "formula": "=COUNTIF('Données visites'!$E$4:$E$1048576,J70)"
+    },
+    {
+      "label_cell": "K70",
+      "target_cell": "L70",
+      "label_text": "S6",
+      "formula": "=COUNTIF('Données visites'!$E$4:$E$1048576,K70)"
+    },
+    {
+      "label_cell": "C51",
+      "target_cell": "D51",
+      "label_text": "Nord",
+      "formula": "=SUMPRODUCT(--(XLOOKUP('Données visites'!$B$4:$B$1048576,'Données médecins'!$B$4:$B$1048576,'Données médecins'!$K$4:$K$1048576)=C51))"
+    },
+    {
+      "label_cell": "H51",
+      "target_cell": "I51",
+      "label_text": "Sud",
+      "formula": "=SUMPRODUCT(--(XLOOKUP('Données visites'!$B$4:$B$1048576,'Données médecins'!$B$4:$B$1048576,'Données médecins'!$K$4:$K$1048576)=H51))"
+    }
+  ],
+  "status": "proposed",
+  "notes": "Formulas are proposed only; application requires approval."
+}

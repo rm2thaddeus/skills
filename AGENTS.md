@@ -6,11 +6,18 @@ This system provides Claude agents for office automation tasks using Anthropic's
 
 ### Preflight & Execution Mode
 - Agents MUST run preflight checks before any operation:
-  - Verify configured skill paths exist (`skills/document_handling`, `skills/template`).
+  - Prefer Anthropic submodule paths when present: `Code/anthropic-skills/document-skills/*`.
+  - Otherwise verify local skeletons exist (`skills/document_handling`, `skills/template`).
   - Verify optional external scripts (e.g., `recalc.py`) are available; otherwise, skip dependent steps.
   - If required components are missing, return status: `pending_implementation` and do not attempt execution.
 - Execution mode defaults to POC skeleton per `config.yaml` (`execution_mode: poc_skeleton`, `non_destructive_writes: true`).
 - All write operations require approval; destructive writes are disabled in POC skeleton mode.
+
+### Quick Start (Testing)
+- Initialize/update the Anthropic skills submodule:
+  - `git submodule update --init --recursive`
+- Confirm paths exist per `config.yaml` (Anthropic first, local fallback).
+- Use the prompts under "Usage Examples" to run read-only tests; writes require approval and go under `artifacts/`.
 
 ## Available Agents
 
@@ -220,6 +227,10 @@ claude "extend xlsx skill to handle budget variance analysis workflows"
 - Automatic backup creation before processing
 - Rollback capabilities for failed operations
 
+### POC Status Codes
+- `pending_implementation`: Required component missing or skeleton-only step
+- `validation_skipped: recalc_unavailable`: LibreOffice/recalc not available
+
 ## Development Guidelines
 
 ### Adding New Agents
@@ -240,5 +251,5 @@ claude "extend xlsx skill to handle budget variance analysis workflows"
 
 **Project**: Excel In ChatGPT - Office Automation  
 **Phase**: MVP Development  
-**Last Updated**: 2025-01-21  
+**Last Updated**: 2025-10-30  
 **Integration**: Anthropic Skills + Human-in-the-Loop Workflows

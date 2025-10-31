@@ -1,0 +1,22 @@
+[
+  { "file": "title.html" },
+  { "file": "map.html" },
+  { "file": "objective.html" },
+  { "file": "topic_data_core.html" },
+  { "file": "yearly.html" },
+  { "file": "monthly.html" },
+  { "file": "heatmap.html" },
+  { "file": "topic_focus.html" },
+  { "file": "overlay.html" },
+  { "file": "cumulative.html" },
+  { "file": "weekday.html" },
+  { "file": "topic_companies.html" },
+  { "file": "topcompanies.html" },
+  { "file": "topic_bursts.html" },
+  { "file": "periods.html" },
+  { "file": "capacity.html" },
+  { "file": "topic_funnel.html" },
+  { "file": "funnel.html" },
+  { "file": "topic_summary.html" },
+  { "file": "summary.html" }
+]

@@ -1,0 +1,60 @@
+{
+  "title": "Applications Analysis: 2022 vs 2025 (Pre vs Post LLM)",
+  "subtitle": "LinkedIn Applications – Volume, Tempo, and Patterns",
+  "source_operation": "20251030-120018-339487",
+  "assets_root": "artifacts/operations/20251030-120018-339487/output/charts",
+  "tables_root": "artifacts/operations/20251030-120018-339487/output",
+  "slides": [
+    { "layout": "title", "title": "Applications Analysis: 2022 vs 2025", "subtitle": "Pre vs Post LLM" },
+    { "layout": "bullets", "title": "Objective & Data", "bullets": [
+        "Compare application intensity and cadence (2022 vs 2025)",
+        "Temporal patterns (month, weekday); company concentration",
+        "Method: pandas resampling; 7-day gap to define periods"
+    ]},
+    { "layout": "image_with_caption", "title": "Yearly Volume Overview", "image": "applications_by_year_bar.png", "caption": "2025 leads with 507 applications; 2022 shows 131 (pre-LLM baseline)." },
+    { "layout": "image_with_caption", "title": "Monthly Trend (All Years)", "image": "applications_by_month_line.png", "caption": "Context across all years; activity spikes in 2022 and sustained run in 2025." },
+    { "layout": "image_with_caption", "title": "Heatmap: Year × Month", "image": "year_month_heatmap.png", "caption": "2022 concentrates Apr–May; 2025 sustains Mar–Jul with higher volume." },
+    { "layout": "image_with_caption", "title": "Monthly Overlay: 2022 vs 2025", "image": "compare_2022_vs_2025_monthly.png", "caption": "2025 starts earlier and stays consistently higher month-to-month." },
+    { "layout": "image_with_caption", "title": "Cumulative: 2022 vs 2025", "image": "compare_2022_vs_2025_cumulative.png", "caption": "Cumulative curve in 2025 outpaces 2022 throughout the cycle." },
+    { "layout": "image_with_caption", "title": "Weekday Distribution (Comparison)", "image": "compare_2022_vs_2025_weekday.png", "caption": "Both skew to weekdays; 2025 dominates across all days." },
+    { "layout": "two_images", "title": "Top Companies (2022 vs 2025)", "left": "top_companies_2022.png", "right": "top_companies_2025.png", "left_caption": "Top 2022 companies (recruiter-heavy)", "right_caption": "Top 2025 companies (broader spread)" },
+    { "layout": "image_with_caption", "title": "Application Periods (Bursts)", "image": "applications_by_week_line.png", "caption": "2025-03-19→07-24: 472 apps (3.72/day); 2022-04-22→05-20: 94 apps (3.36/day)." },
+    { "layout": "bullets", "title": "Rates & Capacity (Setup)", "bullets": [
+        "10-day sprint: ~2.3/day (~23 apps)",
+        "4-week run: ~3.3–3.7/day (~90–105 apps)",
+        "16–18 weeks: ~3.7/day (450+ apps)"
+    ]},
+    { "layout": "bullets", "title": "Next: Response/Interest Layer (Gmail)", "bullets": [
+        "Ingest replies; compute response & interview rates",
+        "Segment by company and period; time-to-first-response"
+    ]},
+    { "layout": "bullets", "title": "Data Quality & Cleaning", "bullets": [
+        "Date normalization; 7-day gap for periods",
+        "Company name normalization (to-do); recruiter labeling (to-do)"
+    ]},
+    { "layout": "bullets", "title": "Summary & Takeaways", "bullets": [
+        "2025 sustained higher intensity vs 2022",
+        "Clear pre/post LLM distinction in pace and persistence",
+        "Funnel metrics pending email integration"
+    ]}
+  ],
+  "tables": [
+    "applications_by_year.csv",
+    "applications_by_year_month.csv",
+    "applications_by_month.csv",
+    "applications_by_week.csv",
+    "applications_by_weekday.csv",
+    "applications_by_company.csv",
+    "application_periods.csv"
+  ],
+  "pptx_skill": {
+    "preflight": {
+      "require_paths": [
+        "Code/anthropic-skills/document-skills/pptx",
+        "artifacts"
+      ],
+      "execution_mode": "poc_skeleton",
+      "non_destructive_writes": true
+    }
+  }
+}

@@ -8,7 +8,9 @@ last_updated: 2025-10-30
 Guidelines for using office automation agents during Phase2-POC with skeleton skills. These rules override generic behavior and must be enforced before any operation.
 
 ## Preflight Checks (MANDATORY)
-- Verify configured paths from `config.yaml` exist:
+- Prefer Anthropic submodule paths if available:
+  - `Code/anthropic-skills/document-skills/*`
+- Otherwise verify local skeleton paths from `config.yaml` exist:
   - `skills/document_handling`
   - `skills/template`
 - If optional external scripts (e.g., `recalc.py`) are missing, skip dependent steps and set `validation_skipped: recalc_unavailable`.

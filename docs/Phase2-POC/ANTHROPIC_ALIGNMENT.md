@@ -183,6 +183,12 @@ Location: `Code/anthropic-skills/`
 - `skill-creator/SKILL.md` - Skill creation guidance
 - `skill-creator/scripts/init_skill.py` - Skill initialization script
 
+### Excel → PowerPoint Workflow (POC Pass)
+- Using the `document-skills/pptx` html2pptx flow and our builder, we generated a Prezi-style PPTX from analyzed Excel charts.
+- Artifacts:
+  - Charts/CSVs: `artifacts/operations/20251030-150553-119339/output/`
+  - Final PPTX: `artifacts/operations/20251030-155036-69363/output/applications_2022_vs_2025_html2pptx.pptx`
+
 ---
 
 ## Implementation Summary

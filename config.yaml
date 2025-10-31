@@ -3,10 +3,18 @@
 ## Anthropic Skills Integration
 
 ### Document Skills Paths
-xlsx_skill_path: "skills/document_handling"
-docx_skill_path: "skills/document_handling"
-pdf_skill_path: "skills/document_handling"
-pptx_skill_path: "skills/document_handling"
+# Preferred Anthropic skills (submodule)
+xlsx_skill_path: "Code/anthropic-skills/document-skills/xlsx"
+docx_skill_path: "Code/anthropic-skills/document-skills/docx"
+pdf_skill_path: "Code/anthropic-skills/document-skills/pdf"
+pptx_skill_path: "Code/anthropic-skills/document-skills/pptx"
+
+# Local fallback (POC skeleton)
+local_fallback_paths:
+  xlsx: "skills/document_handling"
+  docx: "skills/document_handling"
+  pdf: "skills/document_handling"
+  pptx: "skills/document_handling"
 
 ### Skill Creator Path
 skill_creator_path: "skills/template"
@@ -18,6 +26,7 @@ preflight:
   enforce_path_checks: true
   fail_on_missing_skills: false
   return_status_on_missing: "pending_implementation"
+  prefer_anthropic_skills: true
 
 ### Human-in-the-Loop Settings
 require_approval_for:

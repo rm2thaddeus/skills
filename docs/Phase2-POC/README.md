@@ -87,6 +87,21 @@ Phase 2 POC has been successfully completed. The system demonstrates how to leve
 - Validate configuration management with real scenarios
 - Test compliance reporting with actual data
 
+## Excel → PowerPoint Workflow (POC Pass) ✅
+
+- Implemented end-to-end Excel analysis → chart generation → Prezi-style PPTX assembly using Anthropic pptx skill (html2pptx) and local builder.
+- Validated on `Data Tests/Excel and Powerpoint Testing/Applications_Monolith.xlsx`.
+- Key artifacts:
+  - Analysis outputs (CSVs, charts): `artifacts/operations/20251030-150553-119339/output/`
+  - Prezi-style HTML2PPTX deck: `artifacts/operations/20251030-155036-69363/output/applications_2022_vs_2025_html2pptx.pptx`
+  - Prezi build plan/manifest: `artifacts/operations/20251030-155036-69363/output/{prezi_plan.md, prezi_manifest.json}`
+
+MVP Next Steps
+- Add company name normalization and recruiter tagging.
+- Parameterize period-gap and focus years in CLI/UI.
+- Native Prezi build checklist (topic map + frames) based on the manifest.
+- Optional: Gmail/ATS integration for response/interview metrics.
+
 ## Next Phase
 
 Ready to move to **Phase 3 (MVP)** to:

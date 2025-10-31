@@ -1,0 +1,50 @@
+{
+  "title": "Applications 2022 vs 2025 — Emergence",
+  "theme": {
+    "bg": "#2C2C2C",
+    "text": "#F4F6F6",
+    "accent2022": "#4C78A8",
+    "accent2025": "#F58518",
+    "muted": "#AAB7B8",
+    "font": "Arial"
+  },
+  "topology": [
+    { "id": "overview", "type": "topic", "label": "Overview", "assets": [] },
+    { "id": "data-core", "type": "topic", "label": "Data Core", "children": [
+      { "id": "yearly", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/applications_by_year_bar.png", "caption": "2025 → 507; 2022 → 131" },
+      { "id": "monthly", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/applications_by_month_line.png" },
+      { "id": "heatmap", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/year_month_heatmap.png" }
+    ]},
+    { "id": "focus", "type": "topic", "label": "2022 vs 2025", "children": [
+      { "id": "overlay-monthly", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/compare_2022_vs_2025_monthly.png" },
+      { "id": "overlay-cum", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/compare_2022_vs_2025_cumulative.png" },
+      { "id": "weekday", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/compare_2022_vs_2025_weekday.png" }
+    ]},
+    { "id": "companies", "type": "topic", "label": "Companies", "children": [
+      { "id": "top-2022", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/top_companies_2022.png" },
+      { "id": "top-2025", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/top_companies_2025.png" }
+    ]},
+    { "id": "bursts", "type": "topic", "label": "Bursts & Capacity", "children": [
+      { "id": "weekly", "type": "frame", "image": "artifacts/operations/20251030-150553-119339/output/charts/applications_by_week_line.png", "caption": "3.72/day vs 3.36/day peaks" },
+      { "id": "capacity", "type": "frame", "text": ["10-day: ~23", "4-week: ~90–105", "16–18 weeks: 450+"] }
+    ]},
+    { "id": "funnel", "type": "topic", "label": "Next: Gmail", "children": [
+      { "id": "inbox", "type": "frame", "text": ["Response rate", "Interview rate", "TTFR"] }
+    ]},
+    { "id": "summary", "type": "topic", "label": "Summary", "assets": [] }
+  ],
+  "narrative": {
+    "hook": "Post-LLM era: from bursts to sustained cadence.",
+    "beats": [
+      "Contrast 2022 vs 2025 patterns",
+      "Show overlays and cumulative pace",
+      "Highlight weekdays and company spread",
+      "Close with capacity and next metrics"
+    ]
+  },
+  "citations": [
+    "https://prezi.com/l/beautiful-presentation-template-designs/",
+    "https://prezi.com/learn/examples/"
+  ]
+}
+

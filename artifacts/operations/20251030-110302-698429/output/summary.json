@@ -1,0 +1,221 @@
+{
+  "status": "success",
+  "message": "Applications analysis completed",
+  "input_file": "Data Tests\\Excel and Powerpoint Testing\\Applications_Monolith.xlsx",
+  "gap_days": 7,
+  "total_applications": 683,
+  "date_column": "Date",
+  "company_column": "Company",
+  "periods": [
+    {
+      "period_index": 1,
+      "start_date": "2017-07-22",
+      "end_date": "2017-07-22",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 2,
+      "start_date": "2017-08-23",
+      "end_date": "2017-08-23",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 3,
+      "start_date": "2017-09-26",
+      "end_date": "2017-10-02",
+      "num_days": 7,
+      "num_applications": 3,
+      "applications_per_day": 0.4286
+    },
+    {
+      "period_index": 4,
+      "start_date": "2018-04-26",
+      "end_date": "2018-04-26",
+      "num_days": 1,
+      "num_applications": 2,
+      "applications_per_day": 2.0
+    },
+    {
+      "period_index": 5,
+      "start_date": "2021-02-04",
+      "end_date": "2021-02-11",
+      "num_days": 7,
+      "num_applications": 2,
+      "applications_per_day": 0.2857
+    },
+    {
+      "period_index": 6,
+      "start_date": "2021-11-11",
+      "end_date": "2021-11-16",
+      "num_days": 5,
+      "num_applications": 5,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 7,
+      "start_date": "2022-01-11",
+      "end_date": "2022-01-18",
+      "num_days": 8,
+      "num_applications": 2,
+      "applications_per_day": 0.25
+    },
+    {
+      "period_index": 8,
+      "start_date": "2022-02-24",
+      "end_date": "2022-03-26",
+      "num_days": 31,
+      "num_applications": 34,
+      "applications_per_day": 1.0968
+    },
+    {
+      "period_index": 9,
+      "start_date": "2022-04-06",
+      "end_date": "2022-04-06",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 10,
+      "start_date": "2022-04-22",
+      "end_date": "2022-05-20",
+      "num_days": 28,
+      "num_applications": 94,
+      "applications_per_day": 3.3571
+    },
+    {
+      "period_index": 11,
+      "start_date": "2023-09-22",
+      "end_date": "2023-09-22",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 12,
+      "start_date": "2024-01-05",
+      "end_date": "2024-01-05",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 13,
+      "start_date": "2024-04-17",
+      "end_date": "2024-04-17",
+      "num_days": 1,
+      "num_applications": 2,
+      "applications_per_day": 2.0
+    },
+    {
+      "period_index": 14,
+      "start_date": "2024-04-28",
+      "end_date": "2024-04-28",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 15,
+      "start_date": "2024-05-12",
+      "end_date": "2024-05-12",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 16,
+      "start_date": "2024-08-08",
+      "end_date": "2024-08-08",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 17,
+      "start_date": "2024-09-10",
+      "end_date": "2024-09-10",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 18,
+      "start_date": "2024-09-24",
+      "end_date": "2024-10-20",
+      "num_days": 27,
+      "num_applications": 19,
+      "applications_per_day": 0.7037
+    },
+    {
+      "period_index": 19,
+      "start_date": "2024-11-02",
+      "end_date": "2024-11-08",
+      "num_days": 6,
+      "num_applications": 3,
+      "applications_per_day": 0.5
+    },
+    {
+      "period_index": 20,
+      "start_date": "2024-12-06",
+      "end_date": "2024-12-06",
+      "num_days": 1,
+      "num_applications": 1,
+      "applications_per_day": 1.0
+    },
+    {
+      "period_index": 21,
+      "start_date": "2025-01-31",
+      "end_date": "2025-02-07",
+      "num_days": 8,
+      "num_applications": 9,
+      "applications_per_day": 1.125
+    },
+    {
+      "period_index": 22,
+      "start_date": "2025-02-19",
+      "end_date": "2025-03-01",
+      "num_days": 10,
+      "num_applications": 23,
+      "applications_per_day": 2.3
+    },
+    {
+      "period_index": 23,
+      "start_date": "2025-03-10",
+      "end_date": "2025-03-10",
+      "num_days": 1,
+      "num_applications": 3,
+      "applications_per_day": 3.0
+    },
+    {
+      "period_index": 24,
+      "start_date": "2025-03-19",
+      "end_date": "2025-07-24",
+      "num_days": 127,
+      "num_applications": 472,
+      "applications_per_day": 3.7165
+    }
+  ],
+  "artifacts": {
+    "applications_by_month_csv": "artifacts\\operations\\20251030-110302-698429\\output\\applications_by_month.csv",
+    "applications_by_week_csv": "artifacts\\operations\\20251030-110302-698429\\output\\applications_by_week.csv",
+    "applications_by_company_csv": "artifacts\\operations\\20251030-110302-698429\\output\\applications_by_company.csv",
+    "application_periods_csv": "artifacts\\operations\\20251030-110302-698429\\output\\application_periods.csv",
+    "applications_by_year_csv": "artifacts\\operations\\20251030-110302-698429\\output\\applications_by_year.csv",
+    "applications_by_year_month_csv": "artifacts\\operations\\20251030-110302-698429\\output\\applications_by_year_month.csv",
+    "applications_by_weekday_csv": "artifacts\\operations\\20251030-110302-698429\\output\\applications_by_weekday.csv",
+    "charts": {
+      "by_year_bar": "artifacts\\operations\\20251030-110302-698429\\output\\charts\\applications_by_year_bar.png",
+      "by_month_line": "artifacts\\operations\\20251030-110302-698429\\output\\charts\\applications_by_month_line.png",
+      "year_month_heatmap": "artifacts\\operations\\20251030-110302-698429\\output\\charts\\year_month_heatmap.png",
+      "by_week_line": "artifacts\\operations\\20251030-110302-698429\\output\\charts\\applications_by_week_line.png",
+      "top_companies_bar": "artifacts\\operations\\20251030-110302-698429\\output\\charts\\top_companies_bar.png",
+      "weekday_bar": "artifacts\\operations\\20251030-110302-698429\\output\\charts\\applications_by_weekday.png"
+    },
+    "report_md": "artifacts\\operations\\20251030-110302-698429\\output\\report.md"
+  }
+}

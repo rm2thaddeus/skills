@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "operation_id": "20251031-195118-506491",
+  "input_file": "Data Tests\\Dashboarding Tests\\Aitor- Patino.xlsx",
+  "artifacts": {
+    "kpis_json": "artifacts\\operations\\20251031-195118-506491\\output\\kpis.json",
+    "report_md": "artifacts\\operations\\20251031-195118-506491\\output\\report.md",
+    "medecins_clean_csv": "artifacts\\operations\\20251031-195118-506491\\output\\medecins_clean.csv",
+    "visites_clean_csv": "artifacts\\operations\\20251031-195118-506491\\output\\visites_clean.csv",
+    "visites_par_mode_csv": "artifacts\\operations\\20251031-195118-506491\\output\\visites_par_mode.csv",
+    "visites_par_secteur_csv": "artifacts\\operations\\20251031-195118-506491\\output\\visites_par_secteur.csv",
+    "formulas_md": "artifacts\\operations\\20251031-195118-506491\\output\\formulas.md",
+    "proposed_formulas_json": "artifacts\\operations\\20251031-195118-506491\\processing\\proposed_formulas.json"
+  }
+}

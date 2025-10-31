@@ -1,0 +1,23 @@
+{
+  "operation_id": "20251031-195804-279581",
+  "timestamp": "2025-10-31T19:58:08.836363Z",
+  "agent": "excel-processing",
+  "input_file": "Data Tests\\Dashboarding Tests\\Aitor- Patino.xlsx",
+  "output_dir": "artifacts\\operations\\20251031-195804-279581\\output",
+  "processing_artifacts": [
+    "artifacts\\operations\\20251031-195804-279581\\processing\\instructions.md",
+    "artifacts\\operations\\20251031-195804-279581\\processing\\column_map_visites.json",
+    "artifacts\\operations\\20251031-195804-279581\\processing\\column_map_medecins.json",
+    "artifacts\\operations\\20251031-195804-279581\\processing\\proposed_formulas.json"
+  ],
+  "changes": [
+    "Data cleaned (headers normalized, dates parsed, durations extracted)",
+    "KPIs computed and saved",
+    "Formulas proposed for Dashboard sheet (including ARS/R\u00e9gion/Sp\u00e9cialit\u00e9s/D\u00e9l\u00e9gu\u00e9)"
+  ],
+  "validation": {
+    "status": "success",
+    "notes": "Read-only processing; no workbook modifications yet"
+  },
+  "approval_status": "pending"
+}

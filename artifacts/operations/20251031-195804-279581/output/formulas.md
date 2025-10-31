@@ -1,0 +1,13 @@
+## Formules proposées (non appliquées)
+
+- C21: =COUNTA('Données visites'!$B$4:$B$1048576) (label: B21)
+- C21: =COUNTA(UNIQUE('Données visites'!$B$4:$B$1048576)) (label: B21)
+- K51: =COUNTIF('Données visites'!$G$4:$G$1048576,J51) (label: J51)
+- G70: =COUNTIF('Données visites'!$E$4:$E$1048576,F70) (label: F70)
+- H70: =COUNTIF('Données visites'!$E$4:$E$1048576,G70) (label: G70)
+- I70: =COUNTIF('Données visites'!$E$4:$E$1048576,H70) (label: H70)
+- J70: =COUNTIF('Données visites'!$E$4:$E$1048576,I70) (label: I70)
+- K70: =COUNTIF('Données visites'!$E$4:$E$1048576,J70) (label: J70)
+- L70: =COUNTIF('Données visites'!$E$4:$E$1048576,K70) (label: K70)
+- D51: =SUMPRODUCT(--(XLOOKUP('Données visites'!$B$4:$B$1048576,'Données médecins'!$B$4:$B$1048576,'Données médecins'!$K$4:$K$1048576)=C51)) (label: C51)
+- I51: =SUMPRODUCT(--(XLOOKUP('Données visites'!$B$4:$B$1048576,'Données médecins'!$B$4:$B$1048576,'Données médecins'!$K$4:$K$1048576)=H51)) (label: H51)

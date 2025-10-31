@@ -266,3 +266,15 @@ Ready to move to **Phase 3 (MVP)** to:
 - **Verify integration** with Anthropic skills works as designed
 - **Measure performance** and identify optimization needs
 - **Refine architecture** based on real-world testing
+
+## Excel → PowerPoint Workflow Outcome (POC Pass) ✅
+
+- Achieved end-to-end pipeline: Excel analysis → charts/CSVs → Prezi-style PPTX using Anthropic pptx skill (html2pptx).
+- Validated on `Data Tests/Excel and Powerpoint Testing/Applications_Monolith.xlsx`.
+- Artifacts: see `artifacts/operations/20251030-150553-119339/output/` (charts) and `artifacts/operations/20251030-155036-69363/output/` (final PPTX, Prezi plan/manifest).
+
+### MVP Tasks
+- Company normalization and recruiter tagging.
+- Configurable focus years and period-gap.
+- Optional: native Prezi export flow using plan/manifest.
+- Gmail/ATS metrics ingestion for response/interview funnels.

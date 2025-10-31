@@ -1,0 +1,119 @@
+{
+  "title": "Test de dashboarding",
+  "subtitle": "Synthèse, visuels et justifications",
+  "assets_root": "C:\\Users\\aitor\\OneDrive\\Escritorio\\Skills\\skills-4\\artifacts\\operations\\20251031-195804-279581\\output\\charts",
+  "slides": [
+    {
+      "layout": "title",
+      "title": "Test de dashboarding",
+      "subtitle": "Synthèse, visuels et justifications"
+    },
+    {
+      "layout": "bullets",
+      "title": "Objectifs et données",
+      "bullets": [
+        "Objectif: construire un dashboard fiable et réplicable",
+        "Lecture du cahier d'exercice et identification des onglets",
+        "Sources: Données médecins + Données visites + Dashboard"
+      ]
+    },
+    {
+      "layout": "bullets",
+      "title": "Méthodologie de traitement",
+      "bullets": [
+        "Nettoyage: détection de l'entête (\"Identifiant\"), suppression lignes/colonnes vides",
+        "Dates: conversion des numéros Excel en dates (origine: 1899-12-30)",
+        "Durée: extraction en minutes depuis \"15 min\"",
+        "Clés: \"Identifiant\" pour jointure entre visites et médecins"
+      ]
+    },
+    {
+      "layout": "bullets",
+      "title": "Indicateurs clés",
+      "bullets": [
+        "Total de visites: 624",
+        "Médecins uniques visités: 154",
+        "Durée moyenne de visite (min): 37.1"
+      ]
+    },
+    {
+      "layout": "image",
+      "title": "Série temporelle des visites",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\visites_mensuelles_line.png",
+      "caption": "Visites par mois (2019–2021)"
+    },
+    {
+      "layout": "image",
+      "title": "Répartition par mode",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\visites_par_mode_bar.png",
+      "caption": "Face à face vs Interaction à distance"
+    },
+    {
+      "layout": "image",
+      "title": "Répartition par secteur",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\visites_par_secteur_bar.png",
+      "caption": "S1..S6, S9"
+    },
+    {
+      "layout": "image",
+      "title": "Répartition par ARS (médecins)",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\repartition_ars_bar.png",
+      "caption": "Comptage des médecins par ARS"
+    },
+    {
+      "layout": "image",
+      "title": "Répartition par région (médecins)",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\repartition_region_bar.png",
+      "caption": "Comptage des médecins par région"
+    },
+    {
+      "layout": "image",
+      "title": "Top 10 spécialités (médecins)",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\top10_specialites_bar.png",
+      "caption": "Agrégation Specialité 1 + 2"
+    },
+    {
+      "layout": "image",
+      "title": "Top 10 délégués (visites)",
+      "image": "artifacts\\operations\\20251031-195804-279581\\output\\charts\\top10_delegues_bar.png",
+      "caption": "Comptage des visites par délégué"
+    },
+    {
+      "layout": "bullets",
+      "title": "Formules Excel et principes",
+      "bullets": [
+        "Totaux: =COUNTA('Données visites'![Identifiant])",
+        "Uniques: =COUNTA(UNIQUE('Données visites'![Identifiant]))",
+        "Répartition: =COUNTIF(col; étiquette) (Mode, Secteur, Délégué)",
+        "Attributs médecins: XLOOKUP + SUMPRODUCT (ARS, Région, Spécialités)",
+        "Justification: formules dynamiques, auditables, zéro valeurs codées en dur"
+      ]
+    },
+    {
+      "layout": "bullets",
+      "title": "Justification des réponses",
+      "bullets": [
+        "Total visites: comptage des identifiants (toutes lignes non vides)",
+        "Médecins uniques: UNIQUE sur \"Identifiant\"",
+        "Mode/Secteur: COUNTIF sur colonnes correspondantes",
+        "Délégué: COUNTIF sur \"Nom du délégué\"",
+        "ARS/Région: SUMPRODUCT( XLOOKUP(Identifiant_visite → attribut_médecin) = libellé )",
+        "Spécialités: SOMME des correspondances sur Spécialité 1 OU 2"
+      ]
+    },
+    {
+      "layout": "bullets",
+      "title": "Qualité et validation",
+      "bullets": [
+        "Zéro erreur de formules (post-application + recalcul)",
+        "Traçabilité: audit.json + artefacts (CSV, JSON, charts)",
+        "Lisibilité: titres FR, légendes, unités explicites"
+      ]
+    },
+    {
+      "layout": "title",
+      "title": "Conclusion",
+      "subtitle": "Dashboard fiable, reproductible et auditable"
+    }
+  ]
+}

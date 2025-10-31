@@ -1,0 +1,30 @@
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #2C2C2C; color: #F4F6F6; font-family: Arial, Helvetica, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { height: 40pt; background: #F58518; display: flex; align-items: center; padding: 0 20pt; }
+.header h1 { font-size: 26pt; margin: 0; color: #ffffff; }
+.content { flex: 1; padding: 12pt 20pt; display: flex; flex-direction: column; gap: 8pt; }
+h2 { font-size: 18pt; margin: 0; }
+p { font-size: 12pt; margin: 0; }
+ul { margin: 0 0 0 18pt; padding: 0; }
+.caption { color: #AAB7B8; font-size: 10pt; margin-top: 4pt; }
+.chart { max-width: 100%; max-height: 290pt; }
+.row { display: flex; gap: 14pt; }
+.col { flex: 1; }
+
+/* Prezi-style topic map */
+.map { position: relative; flex: 1; background: #1f1f1f; border-radius: 6pt; }
+.node { position: absolute; display: flex; align-items: center; justify-content: center; border-radius: 9999pt; border: 2pt solid #AAB7B8; color: #F4F6F6; text-align: center; }
+.node.small { width: 80pt; height: 80pt; font-size: 12pt; }
+.node.medium { width: 110pt; height: 110pt; font-size: 14pt; }
+.node.large { width: 150pt; height: 150pt; font-size: 16pt; }
+.node.blue { border-color: #4C78A8; }
+.node.orange { border-color: #F58518; }
+.node.active { background: rgba(245,133,24,0.15); border-width: 3pt; }
+.connector { position: absolute; background: #494949; height: 2pt; }
+
+/* Section header emphasis */
+.section-note { color: #AAB7B8; font-size: 11pt; }

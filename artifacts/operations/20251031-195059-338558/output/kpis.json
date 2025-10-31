@@ -1,0 +1,213 @@
+{
+  "total_visites": 624,
+  "unique_medecins_visites": 154,
+  "visites_par_mode": [
+    {
+      "mode": "Face à face",
+      "visites": 314
+    },
+    {
+      "mode": "Interaction à distance",
+      "visites": 310
+    }
+  ],
+  "visites_par_secteur": [
+    {
+      "secteur": "S4",
+      "visites": 116
+    },
+    {
+      "secteur": "S6",
+      "visites": 108
+    },
+    {
+      "secteur": "S5",
+      "visites": 107
+    },
+    {
+      "secteur": "S3",
+      "visites": 101
+    },
+    {
+      "secteur": "S2",
+      "visites": 99
+    },
+    {
+      "secteur": "S1",
+      "visites": 91
+    },
+    {
+      "secteur": "S9",
+      "visites": 2
+    }
+  ],
+  "visites_par_mois": [
+    {
+      "month": "2019-03",
+      "count": 2
+    },
+    {
+      "month": "2019-04",
+      "count": 1
+    },
+    {
+      "month": "2019-05",
+      "count": 1
+    },
+    {
+      "month": "2019-06",
+      "count": 2
+    },
+    {
+      "month": "2019-07",
+      "count": 1
+    },
+    {
+      "month": "2019-08",
+      "count": 0
+    },
+    {
+      "month": "2019-09",
+      "count": 0
+    },
+    {
+      "month": "2019-10",
+      "count": 0
+    },
+    {
+      "month": "2019-11",
+      "count": 1
+    },
+    {
+      "month": "2019-12",
+      "count": 0
+    },
+    {
+      "month": "2020-01",
+      "count": 57
+    },
+    {
+      "month": "2020-02",
+      "count": 55
+    },
+    {
+      "month": "2020-03",
+      "count": 48
+    },
+    {
+      "month": "2020-04",
+      "count": 53
+    },
+    {
+      "month": "2020-05",
+      "count": 37
+    },
+    {
+      "month": "2020-06",
+      "count": 53
+    },
+    {
+      "month": "2020-07",
+      "count": 49
+    },
+    {
+      "month": "2020-08",
+      "count": 56
+    },
+    {
+      "month": "2020-09",
+      "count": 43
+    },
+    {
+      "month": "2020-10",
+      "count": 58
+    },
+    {
+      "month": "2020-11",
+      "count": 46
+    },
+    {
+      "month": "2020-12",
+      "count": 56
+    },
+    {
+      "month": "2021-01",
+      "count": 3
+    },
+    {
+      "month": "2021-02",
+      "count": 0
+    },
+    {
+      "month": "2021-03",
+      "count": 0
+    },
+    {
+      "month": "2021-04",
+      "count": 0
+    },
+    {
+      "month": "2021-05",
+      "count": 0
+    },
+    {
+      "month": "2021-06",
+      "count": 0
+    },
+    {
+      "month": "2021-07",
+      "count": 0
+    },
+    {
+      "month": "2021-08",
+      "count": 1
+    },
+    {
+      "month": "2021-09",
+      "count": 0
+    },
+    {
+      "month": "2021-10",
+      "count": 0
+    },
+    {
+      "month": "2021-11",
+      "count": 0
+    },
+    {
+      "month": "2021-12",
+      "count": 1
+    }
+  ],
+  "duree_moyenne_min": 37.13942307692308,
+  "visites_par_delegue": [
+    {
+      "delegue": "Agatha CHRISTIE",
+      "visites": 116
+    },
+    {
+      "delegue": "Coco CHANEL",
+      "visites": 108
+    },
+    {
+      "delegue": "Charlotte CORDAY",
+      "visites": 107
+    },
+    {
+      "delegue": "Catelyn STARK",
+      "visites": 101
+    },
+    {
+      "delegue": "Michel STROGOFF",
+      "visites": 99
+    },
+    {
+      "delegue": "Marie CURIE",
+      "visites": 91
+    },
+    {
+      "delegue": "Alexandra OCASIO-CORTEZ",
+      "visites": 2
+    }
+  ]
+}
