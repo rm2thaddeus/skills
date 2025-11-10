@@ -13,6 +13,14 @@ This system provides Claude agents for office automation tasks using Anthropic's
 - Execution mode defaults to POC skeleton per `config.yaml` (`execution_mode: poc_skeleton`, `non_destructive_writes: true`).
 - All write operations require approval; destructive writes are disabled in POC skeleton mode.
 
+### Interviews/LinkedIn Pipeline Data Contracts (updated)
+- Canonical normalized fields (first data sheet): `event_date`, `start_time`, `end_time`, `duration_minutes`, `company`, `role`, `medium`, `source`, `contacts`, `notes`, `period`, `year`.
+- `normalized_interviews.xlsx` MUST NOT contain internal columns (`__source__`, `__key__`, `__login_time__`). These are reserved for internal processing and are dropped before export.
+- `merged_interview_events.xlsx` MAY include `__source__` to indicate origin (`curated` or `linkedin`), but MUST NOT include `__key__` (internal dedupe key is dropped before export).
+- PROVENANCE sheet MUST be appended as the LAST sheet so the first sheet is always the dataset, not metadata.
+- When a “Basic” LinkedIn export is provided, the pipeline MUST scan `.../Jobs/` for job application CSVs and aggregate them to compute `Applications_By_Year` and `Application_Periods`.
+- Date parsing MUST coerce unparseable values to NA (no string `NaT` in data); keys and other internal helpers must not leak to exported sheets.
+
 ### Quick Start (Testing)
 - Initialize/update the Anthropic skills submodule:
   - `git submodule update --init --recursive`
@@ -48,6 +56,11 @@ claude "create financial model from Data/sales_data.xlsx with growth projections
 4. If available, use `recalc.py` for formula recalculation; otherwise return `validation_skipped: recalc_unavailable`
 5. Validate zero errors when recalculation is available; otherwise return `pending_implementation`
 6. Generate audit trail with all changes
+7. For interviews/LinkedIn runs, validate:
+   - First sheet is data (not PROVENANCE)
+   - `normalized_interviews.xlsx` excludes internal columns
+   - `merged_interview_events.xlsx` excludes `__key__`
+   - Applications tables populate when Jobs CSVs exist in Basic export
 
 ---
 
