@@ -1,0 +1,35 @@
+{
+  "operation_id": "20250107-143210-q4-dash-audit",
+  "status": "needs_approval",
+  "task": {
+    "input_modalities": ["xlsx", "pptx"],
+    "skill": "document-skills/xlsx",
+    "objectives": [
+      "Repair broken formulas",
+      "Regenerate 6-slide KPI deck from template"
+    ],
+    "assumptions": ["No external data sources allowed"]
+  },
+  "artifacts": {
+    "input": ["input/q4_kpis.xlsx", "input/template.pptx"],
+    "processing": ["processing/column_map.md", "processing/notes.md"],
+    "output": ["output/q4_kpis_fixed.xlsx", "output/kpi_deck.pptx"]
+  },
+  "audit_trail": [
+    {"t": "2025-01-07T14:32:11Z", "actor": "agent", "action": "read", "details": "Parsed q4_kpis.xlsx"},
+    {"t": "2025-01-07T14:45:02Z", "actor": "human", "action": "approve", "details": "Approve write to output/"}
+  ],
+  "validation": {
+    "checks": [
+      {"name": "xlsx_recalc_available", "status": "skipped", "reason": "LibreOffice not installed"},
+      {"name": "pptx_template_preserved", "status": "passed"}
+    ],
+    "result": "pass"
+  },
+  "metadata": {
+    "workspace_version": "1.1.0",
+    "skills_commit": "a1b2c3d",
+    "model": "claude-code-latest"
+  }
+}
+

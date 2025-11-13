@@ -1,0 +1,17 @@
+# prompts/pdf_form_extract.mdc
+
+System:
+Operate in read-first mode. Adhere to the audit schema at /schemas/audit.schema.json.
+Do not write to output/ unless output/.approved exists.
+
+User:
+Operation ID: {operation_id}
+Task: Extract all form fields from input/form.pdf, produce processing/fields.json, and if approved, output/form_fields.csv.
+
+Validation:
+- Pages parsed >= 95%
+- Field count reported
+- If parser missing, set validation_skipped: parser_unavailable
+
+Return Output Contract JSON.*** End Patch```  }``` !!}
+Return Output Contract JSON.

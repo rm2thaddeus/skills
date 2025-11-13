@@ -22,6 +22,10 @@ Guidelines for using office automation agents during Phase2-POC with skeleton sk
 - Default: `execution_mode: poc_skeleton`, `non_destructive_writes: true` (see `config.yaml`).
 - Only read/analyze operations are allowed by default.
 - Any file write requires explicit human approval and must write to `artifacts/operations/{operation_id}/output/`.
+- Write gate: writes to `output/` are permitted only if file `artifacts/operations/{operation_id}/output/.approved` exists.
+- Allowed write paths:
+  - `artifacts/operations/*/processing/**`
+  - `artifacts/operations/*/output/**` (requires `.approved`)
 
 ## Skill Mapping (Phase2 Reality)
 - Do NOT assume `Code/anthropic-skills` exists.
@@ -33,7 +37,7 @@ Guidelines for using office automation agents during Phase2-POC with skeleton sk
 Every agent response MUST include:
 ```json
 {
-  "status": "success | error | pending_implementation | pending_approval",
+  "status": "planned | running | blocked | needs_approval | succeeded | failed",
   "artifacts": [],
   "audit_trail": {},
   "approval_required": false,
@@ -47,6 +51,8 @@ Every agent response MUST include:
 ## Approval & Artifacts
 - Approval checkpoints: analysis → transform → validation → final review.
 - All outputs go under `artifacts/operations/{operation_id}/...` with a complete `audit.json`.
+- `audit.json` must validate against `schemas/audit.schema.json`.
+- `provenance.json` should include checksums for all files and tool versions used.
 
 ## Error Taxonomy
 - `missing_component`: required path/script not found
@@ -58,6 +64,12 @@ Every agent response MUST include:
 - No writes outside `artifacts/`.
 - No destructive overwrites of input files.
 - No network/file access to non-configured locations.
+- Do not read `.env` contents; credentials are configured in the IDE.
 
 ## MCP Usage
 - Prefer local skills; if external integration is needed, first verify availability via preflight.
+
+## Data Governance
+- Offline mode: if env `OFFLINE=1` is detected, avoid any network fetches and use only local assets.
+- PII/Secrets hygiene: redact sensitive values in logs; forbidden substrings in logs: `api_key=`, `Authorization:`, `Bearer `.
+- Large file guard: recommended max_mb_per_file: 50; on violation set `status: blocked` and return guidance.

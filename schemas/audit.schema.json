@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://your-org/schemas/audit.schema.json",
+  "type": "object",
+  "required": ["operation_id", "status", "task", "artifacts", "audit_trail", "validation"],
+  "properties": {
+    "operation_id": {
+      "type": "string",
+      "pattern": "^[0-9]{8}-[0-9]{6}-[a-z0-9-]{1,32}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "running", "blocked", "needs_approval", "succeeded", "failed"]
+    },
+    "task": {
+      "type": "object",
+      "required": ["input_modalities", "skill", "objectives"],
+      "properties": {
+        "input_modalities": { "type": "array", "items": { "type": "string" } },
+        "skill": { "type": "string" },
+        "objectives": { "type": "array", "items": { "type": "string" } },
+        "assumptions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["input", "processing", "output"],
+      "properties": {
+        "input": { "type": "array", "items": { "type": "string" } },
+        "processing": { "type": "array", "items": { "type": "string" } },
+        "output": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "audit_trail": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["t", "actor", "action", "details"],
+        "properties": {
+          "t": { "type": "string", "format": "date-time" },
+          "actor": { "type": "string", "enum": ["human", "agent"] },
+          "action": { "type": "string" },
+          "details": { "type": "string" }
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["checks", "result"],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "status"],
+            "properties": {
+              "name": { "type": "string" },
+              "status": { "type": "string", "enum": ["passed", "failed", "skipped"] },
+              "reason": { "type": "string" }
+            }
+          }
+        },
+        "result": { "type": "string", "enum": ["pass", "fail"] }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "workspace_version": { "type": "string" },
+        "skills_commit": { "type": "string" },
+        "model": { "type": "string" }
+      }
+    }
+  }
+}
+

@@ -1,8 +1,8 @@
-# Excel In ChatGPT - Codex Skill Workspace
+# Codex Skill Workspace
 
 ## Overview
 
-This repository is a ready-to-run workspace for orchestrating Claude Code skills from within Cursor/Codex. It packages Anthropic's public skill references together with a curated artifact workflow so that each task starts from known patterns and ends with audit-ready outputs. Use it whenever you want an AI agent to reason about spreadsheets, documents, or presentations while keeping every intermediate deliverable in versioned storage.
+This repository is a ready-to-run workspace for orchestrating Claude Code skills from within Cursor. It packages Anthropic's public skill references together with a curated artifact workflow so that each task starts from known patterns and ends with audit-ready outputs. Use it whenever you want an AI agent to reason about spreadsheets, documents, or presentations while keeping every intermediate deliverable in versioned storage.
 
 Unlike a traditional Python project, this workspace centers on prompting conventions. The important code already lives in the `Code/anthropic-skills` submodule; your job (or the agent's) is to select the correct skill playbook, follow the guardrails in `.cursor/rules`, and write all generated assets into `artifacts/operations/...`.
 
@@ -10,34 +10,47 @@ Unlike a traditional Python project, this workspace centers on prompting convent
 
 - `Code/anthropic-skills/` – Git submodule containing the full set of Anthropic Claude skills. Every skill ships with a `SKILL.md`, example assets, and helper scripts.
 - `artifacts/operations/` – Canonical archive of inputs, intermediate files, outputs, and `audit.json` logs per operation ID.
+- `schemas/` – JSON Schemas for audits and manifests (see `audit.schema.json`).
+- `templates/` – Ready-to-copy examples (e.g., `audit.example.json`) for new operations.
+- `tools/op` – Tiny helper CLI for creating, approving, and validating operations.
 - `Data Tests/` – Realistic Excel, PowerPoint, and CSV samples for dry runs or regression testing.
 - `.cursor/rules/agents.mdc` – Mandatory runtime policy used by Cursor to keep agents aligned with the Phase2 proof-of-concept contract.
 - `.gitmodules`, `.gitignore` – Git plumbing and workspace hygiene files.
 
 ## Quick Start
 
-1. Clone the repository and initialize the submodule:
+1. Clone the repository (with submodules) and open in Cursor:
    ```bash
-   git clone <your-repo>
-   cd skills-4
-   git submodule update --init --recursive
+   git clone --recurse-submodules https://github.com/your-org/codex-skill-workspace.git
+   cd codex-skill-workspace
    ```
-2. Open the folder in Cursor (or another Codex-capable IDE).
-3. Inspect `.cursor/rules/agents.mdc` so your prompts stay within the approved execution model (poc_skeleton, non destructive writes).
+2. Inspect `.cursor/rules/agents.mdc` so your prompts stay within the approved execution model (analysis-first, non-destructive writes).
 4. When the agent needs reference material, point it toward the relevant `SKILL.md` inside `Code/anthropic-skills/...`.
 
 No additional Python environment is required unless you choose to execute one of the helper scripts bundled with the skills (for example `document-skills/xlsx/recalc.py`).
 
-## Using Skills in Codex
+## Operation ID and Layout
+
+- Operation ID format: `{yyyy}{mm}{dd}-{hh}{mm}{ss}-{slug}` where `{slug}` is lowercase kebab `[a-z0-9-]{1,32}`.
+- Example: `20250107-143210-q4-dash-audit` → `artifacts/operations/20250107-143210-q4-dash-audit/`
+
+Required structure:
+- `input/` – Unmodified source files or metadata supplied to the agent (read-only).
+- `processing/` – Scratch space for generated notes, column maps, or partially rendered assets.
+- `output/` – Final deliverables (write-gated, see below).
+- `audit.json` – Must validate against `schemas/audit.schema.json`.
+- `provenance.json` – Checksums and tool versions; auto-created by `tools/op new`.
+
+## Using Skills
 
 Follow this loop whenever you run a task through the AI agent:
 
 1. **Clarify the task** – Identify the target modality (Excel, PDF, PPTX, etc.) and open the matching `SKILL.md` for context and constraints.
 2. **Confirm prerequisites** – Per the rules file, verify whether required scripts or templates exist. If a dependency is missing, surface `status: pending_implementation`.
 3. **Plan with the skill guide** – Each `SKILL.md` describes supported transformations, validation requirements, and sample prompts. Use those sections to scaffold the agent's reasoning.
-4. **Execute in read-first mode** – The default contract is analysis-first. Any file writes must occur in `artifacts/operations/{operation_id}/output/` and usually require human approval.
+4. **Execute in read-first mode** – The default contract is analysis-first. Any file writes must occur in `artifacts/operations/{operation_id}/output/` and require explicit approval via write-gate.
 5. **Log everything** – Capture summaries in `audit.json`, stash raw evidence under `input/` and `processing/`, and export deliverables to `output/`.
-6. **Report via the output contract** – Return the JSON structure defined in `agents.mdc` (`status`, `artifacts`, `audit_trail`, `validation`, etc.) so downstream automation stays consistent.
+6. **Report via the output contract** – Return the JSON aligned to `schemas/audit.schema.json` fields (`status`, `artifacts`, `audit_trail`, `validation`, etc.) so downstream automation stays consistent.
 
 ## Artifacts and Audit Trail
 
@@ -49,6 +62,15 @@ Every operation ID inside `artifacts/operations/` mirrors the expected lifecycle
 - `audit.json` – Machine-readable log describing what changed, why, and which validations ran.
 
 When you launch a new task, create a unique timestamped directory (the existing examples show the preferred naming scheme). All intermediate content lives here so reviewers can reconstruct the full decision trail.
+
+## Write Gate (Mechanical Approval)
+
+- Any write to `output/` requires the presence of `output/.approved`.
+- Humans approve explicitly:
+  ```bash
+  echo "approved-by: <name> <UTC_ISO8601>" > artifacts/operations/<operation_id>/output/.approved
+  ```
+- CI should remove `.approved` after packaging artifacts to prevent accidental reuse.
 
 ## Available Skill References
 
@@ -82,8 +104,27 @@ Because the heavy lifting lives in the skill definitions, most enhancements only
 
 ## Support and Troubleshooting
 
-- Verify the submodule is up to date if a skill reference appears missing: `git submodule update --remote`.
+- Submodule policy: `Code/anthropic-skills` is pinned to a specific commit. Consumers should not use `--remote` updates. Maintainers: see “Submodule Policy” below.
 - When a helper script (for example `recalc.py`) is not available on the local machine, declare `validation_skipped: recalc_unavailable` per the rules file.
 - Keep an eye on disk usage within `artifacts/operations/`; archive or compress older runs if you replicate large datasets.
 
 With these patterns in place, you can drop this repository into any Codex session and have Claude Code-powered agents deliver fully auditable office-automation results from day one.
+
+## Submodule Policy (Maintainers)
+
+The `Code/anthropic-skills` submodule is pinned to a commit. To bump:
+```bash
+cd Code/anthropic-skills
+git fetch
+git checkout <new-commit>
+cd ..
+git add Code/anthropic-skills
+git commit -m "chore(skills): bump submodule to <shortsha>"
+```
+
+## Offline Mode and Environment
+
+- `.env` is optional; never committed.
+- Set `OFFLINE=1` to prevent any network fetches. Agents must rely only on local assets.
+- Agents must not read `.env` contents; model credentials are configured in Cursor settings.
+- Forbidden patterns in logs: `api_key=`, `Authorization:`, `Bearer `.

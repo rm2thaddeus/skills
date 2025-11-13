@@ -1,0 +1,32 @@
+# prompts/xlsx_repair_and_pptx_export.mdc
+
+System:
+You are an analysis-first code assistant operating under a gated-write policy.
+Never write outside artifacts/operations/*/processing unless output/.approved exists.
+Follow the SKILL.md for "document-skills/xlsx" and "document-skills/pptx".
+Return the Output Contract JSON at the end (status, artifacts, audit_trail, validation).
+
+User:
+Operation ID: {operation_id}
+Workspace Root: {root}
+Skill Guides:
+ - document-skills/xlsx/SKILL.md
+ - document-skills/pptx/SKILL.md
+
+Objectives:
+1) Repair broken formulas in input/q4_kpis.xlsx without altering sheet names or formatting.
+2) Generate a 6-slide KPI deck using input/template.pptx and export to output/kpi_deck.pptx.
+
+Constraints:
+- Analysis-first: summarize plan; request approval before any write to output/.
+- If LibreOffice is unavailable, set validation_skipped: recalc_unavailable and proceed with formula audit only.
+- Log all steps in audit_trail entries.
+
+Deliverables:
+- processing/column_map.md
+- processing/notes.md
+- output/q4_kpis_fixed.xlsx
+- output/kpi_deck.pptx (requires write approval)
+
+Return JSON:
+status, artifacts{input,processing,output}, audit_trail, validation

@@ -1,0 +1,27 @@
+name: Validate Artifacts
+
+on:
+  pull_request:
+    paths:
+      - 'artifacts/operations/**'
+      - 'schemas/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm i -g ajv-cli
+      - name: Validate audits
+        run: |
+          set -e
+          for f in artifacts/operations/*/audit.json; do
+            echo "Validating $f"
+            ajv validate -s schemas/audit.schema.json -d "$f"
+          done
+

@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
+ops="$root/artifacts/operations"
+
+cmd="${1:-}"
+case "$cmd" in
+  new)
+    slug="${2:-task}"
+    ts="$(date -u +%Y%m%d-%H%M%S)"
+    op="$ops/$ts-$slug"
+    mkdir -p "$op/input" "$op/processing" "$op/output"
+    # minimal provenance
+    cat > "$op/provenance.json" <<EOF
+{"operation_id":"$ts-$slug","created_utc":"$(date -u +%FT%TZ)","tools":{"op":"0.1.0"}}
+EOF
+    # seed audit
+    if [ -f "$root/templates/audit.example.json" ]; then
+      cp "$root/templates/audit.example.json" "$op/audit.json"
+    else
+      echo '{"operation_id":"'"$ts-$slug"'","status":"planned","artifacts":{"input":[],"processing":[],"output":[]},"audit_trail":[],"validation":{"checks":[],"result":"fail"}}' > "$op/audit.json"
+    fi
+    echo "created $op"
+    ;;
+  approve)
+    op="$ops/${2:?operation id required}"
+    echo "approved-by: $(whoami) $(date -u +%FT%TZ)" > "$op/output/.approved"
+    echo "approved $op"
+    ;;
+  validate)
+    op="$ops/${2:?operation id required}"
+    # basic JSON check
+    jq -e -S . < "$op/audit.json" >/dev/null
+    # schema validation if ajv is available
+    if command -v ajv >/dev/null 2>&1; then
+      ajv validate -s "$root/schemas/audit.schema.json" -d "$op/audit.json"
+    else
+      echo "tip: install ajv-cli for schema validation (npm i -g ajv-cli)"
+    fi
+    echo "validated $op/audit.json"
+    ;;
+  *)
+    echo "usage: tools/op {new <slug>|approve <operation_id>|validate <operation_id>}"
+    exit 2
+    ;;
+esac
+
