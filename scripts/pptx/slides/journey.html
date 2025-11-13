@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html { background: #2c2c2c; }
+  body {
+    width: 720pt; height: 405pt; margin: 0; padding: 0;
+    background: #2c2c2c; font-family: Arial, Helvetica, sans-serif;
+    display: block; position: relative;
+  }
+  h2 { color: #f4f6f6; font-size: 24pt; margin: 24pt 48pt 0 48pt; }
+  p  { color: #f4f6f6; font-size: 12pt; margin: 0; }
+
+  /* Vertical timeline line (partial border => line shape) */
+  .vline {
+    position: absolute; left: 360pt; top: 90pt; width: 1pt; height: 270pt;
+    border-left: 3pt solid #f58518;
+  }
+
+  /* Marker capsules (DIV => shape) */
+  .mark { position: absolute; width: 10pt; height: 10pt; background: #4c78a8; border-radius: 6pt; }
+
+  /* Label cards (DIV => shape + text in <p>) */
+  .card { position: absolute; background: #202020; border: 1pt solid #aab7b8; border-radius: 6pt; padding: 8pt; }
+  .title { color: #ffffff; font-size: 13pt; margin: 0 0 4pt 0; }
+  .meta  { color: #aab7b8; font-size: 11pt; margin: 0; }
+
+  /* positions along the timeline */
+  /* Mérida (ULA) */
+  .m1 { left: 356pt; top: 110pt; }
+  .c1 { left: 240pt; top: 96pt; width: 100pt; }
+  /* Nara (NAIST) */
+  .m2 { left: 356pt; top: 150pt; }
+  .c2 { left: 380pt; top: 136pt; width: 190pt; }
+  /* Toulouse (Master) */
+  .m3 { left: 356pt; top: 190pt; }
+  .c3 { left: 210pt; top: 176pt; width: 170pt; }
+  /* Bordeaux (Lab du Futur) */
+  .m4 { left: 356pt; top: 220pt; }
+  .c4 { left: 380pt; top: 206pt; width: 200pt; }
+  /* Rome (UNITOV) */
+  .m5 { left: 356pt; top: 255pt; }
+  .c5 { left: 210pt; top: 241pt; width: 210pt; }
+  /* Trento (UNITN) */
+  .m6 { left: 356pt; top: 290pt; }
+  .c6 { left: 380pt; top: 276pt; width: 230pt; }
+  /* Molsheim (Merck) */
+  .m7 { left: 356pt; top: 325pt; }
+  .c7 { left: 210pt; top: 311pt; width: 230pt; }
+
+  /* bottom margin safety */
+  .footer { position: absolute; left: 48pt; bottom: 24pt; right: 48pt; }
+  .hint { color: #aab7b8; font-size: 10pt; }
+</style>
+</head>
+<body>
+  <h2>Mon parcours dans le monde</h2>
+  <div class="vline"></div>
+
+  <div class="mark m1"></div>
+  <div class="card c1">
+    <p class="title">Mérida, Venezuela</p>
+    <p class="meta">ULA — Chimie, Biologie moléculaire (2015)</p>
+  </div>
+
+  <div class="mark m2"></div>
+  <div class="card c2">
+    <p class="title">Nara, Japon</p>
+    <p class="meta">NAIST — Photonique moléculaire (2017)</p>
+  </div>
+
+  <div class="mark m3"></div>
+  <div class="card c3">
+    <p class="title">Toulouse, France</p>
+    <p class="meta">Master — Chimie analytique (2018)</p>
+  </div>
+
+  <div class="mark m4"></div>
+  <div class="card c4">
+    <p class="title">Bordeaux, France</p>
+    <p class="meta">Solvay — Laboratoire du Futur (2018)</p>
+  </div>
+
+  <div class="mark m5"></div>
+  <div class="card c5">
+    <p class="title">Rome, Italie</p>
+    <p class="meta">UNITOV — MSCA ESR, DNA/RNA nano (2018–2021)</p>
+  </div>
+
+  <div class="mark m6"></div>
+  <div class="card c6">
+    <p class="title">Trento, Italie</p>
+    <p class="meta">UNITN — Postdoc, cellules artificielles (2021–2022)</p>
+  </div>
+
+  <div class="mark m7"></div>
+  <div class="card c7">
+    <p class="title">Molsheim, France</p>
+    <p class="meta">Merck Life Science — Support technique (2022–présent)</p>
+  </div>
+
+  <div class="footer"><p class="hint">Repères: parcours international, étapes clés, projets et technologies</p></div>
+</body>
+</html>
+

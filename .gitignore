@@ -58,6 +58,10 @@ desktop.ini
 # Project specific
 *.zip.backup
 
+# Generated artifacts and data exports
+artifacts/operations/
+Data Tests/
+
 # Test data (may contain sensitive information)
 Data/
 Resources/Images/
